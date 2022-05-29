@@ -1,9 +1,8 @@
 .model small
 .stack 100h
-.data
+.data     
 var db 0Dh, 0ah
 char db ?, '$' 
-s db ?, '$'
 
 .code
 main proc 
@@ -17,11 +16,8 @@ sub al, 20h
 mov char, al 
 
 MOV AH, 9
-INT 21H  
-
-lea dx, var
-
-       
+INT 21H
+      
 mov ah, 1
 int 21h
 add al, 20h
